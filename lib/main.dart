@@ -1,5 +1,7 @@
 import 'package:card/anmations.dart';
+import 'package:card/awayAndinvisble.dart';
 import 'package:card/card.dart';
+import 'package:card/nextAndPrev.dart';
 import 'package:card/profile.dart';
 import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/image': (context) => Imagecour(),
         '/travel': (context) => Travel(),
+        '/away': (context) => Away(),
+        '/next': (context) => NextAndPrev(),
       },
     );
   }
@@ -205,24 +209,34 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.travel_explore,
-                //     size: 25,
-                //   ),
-                //   title: Text('Travellll',
-                //       style:
-                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                // ),
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.travel_explore,
-                //     size: 25,
-                //   ),
-                //   title: Text('Travellll',
-                //       style:
-                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                // ),
+                ListTile(
+                  leading: Icon(
+                    Icons.offline_bolt,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/away');
+                    },
+                    child: Text('away',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.travel_explore,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/next');
+                    },
+                    child: Text('Next',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
                 // ListTile(
                 //   leading: Icon(
                 //     Icons.travel_explore,
