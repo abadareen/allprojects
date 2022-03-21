@@ -1,18 +1,23 @@
 // ignore_for_file: sized_box_for_whitespace
 
+import 'package:card/profilebeach.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(Travel());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+class Travel extends StatelessWidget {
+  const Travel({Key key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Inkell',
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
+      routes: {
+        '/profile': (context) => ProfilePage(),
+      },
     );
   }
 }
@@ -74,6 +79,11 @@ class _MyHomePageState extends State<MyHomePage>
                 ),
                 const SizedBox(width: 5.0),
                 InkWell(
+                  onTap: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/profile');
+                    });
+                  },
                   child: Container(
                     height: 50.0,
                     width: 50.0,

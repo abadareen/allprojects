@@ -1,236 +1,251 @@
+import 'package:card/anmations.dart';
+import 'package:card/card.dart';
+import 'package:card/profile.dart';
+import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+import 'image_coursel.dart';
+
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      routes: {
+        '/card': (context) => Cardd(),
+        '/anmations': (context) => Anmations(),
+        '/profile': (context) => Profile(),
+        '/image': (context) => Imagecour(),
+        '/travel': (context) => Travel(),
+      },
     );
   }
 }
 
+class ProfilePage {}
+
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
+
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
-  Animation cardAnimation, delayedCardAnimation, fabButtonanim, infoAnimation;
-  AnimationController controller;
-
-  @override
-  void initState() {
-    super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
-
-    cardAnimation = Tween(begin: 0.0, end: -0.025).animate(
-        CurvedAnimation(curve: Curves.fastOutSlowIn, parent: controller));
-
-    delayedCardAnimation = Tween(begin: 0.0, end: -0.05).animate(
-        CurvedAnimation(
-            curve: const Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
-            parent: controller));
-
-    fabButtonanim = Tween(begin: 1.0, end: -0.0008).animate(CurvedAnimation(
-        curve: const Interval(0.8, 1.0, curve: Curves.fastOutSlowIn),
-        parent: controller));
-
-    infoAnimation = Tween(begin: 0.0, end: 0.025).animate(CurvedAnimation(
-        curve: const Interval(0.7, 1.0, curve: Curves.fastOutSlowIn),
-        parent: controller));
+class _MyHomePageState extends State<MyHomePage> {
+  // ignore: unused_element
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final devHeight = MediaQuery.of(context).size.height;
-    controller.forward();
-    return AnimatedBuilder(
-        animation: controller,
-        builder: (BuildContext context, Widget child) {
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0.0,
-              leading: IconButton(
-                icon: const Icon(Icons.arrow_back_ios),
-                color: Colors.black,
-                onPressed: () {},
-              ),
-              title: const Text('Near by',
-                  style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black)),
-              actions: const <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 8.0),
-                  child: FlutterLogo(textColor: Colors.green, size: 40.0),
-                )
-              ],
-            ),
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Container(
-                    padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 40.0),
-                    child: Stack(
-                      clipBehavior: Clip.none,
-                      children: <Widget>[
-                        Positioned(
-                          left: 20.0,
-                          child: Container(
-                            transform: Matrix4.translationValues(0.0,
-                                delayedCardAnimation.value * devHeight, 0.0),
-                            width: 260.0,
-                            height: 400.0,
-                            decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(10.0)),
-                          ),
-                        ),
-                        Positioned(
-                          left: 10.0,
-                          child: Container(
-                            transform: Matrix4.translationValues(
-                                0.0, cardAnimation.value * devHeight, 0.0),
-                            width: 280.0,
-                            height: 400.0,
-                            decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(10.0)),
-                          ),
-                        ),
-                        Container(
-                          width: 300.0,
-                          height: 400.0,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0),
-                              image: const DecorationImage(
-                                  image: AssetImage(
-                                      'assets/fonts/image/girl.jpeg'),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Positioned(
-                          top: 320.0,
-                          left: 15.0,
-                          child: Container(
-                            transform: Matrix4.translationValues(
-                                0.0, infoAnimation.value * devHeight, 0.0),
-                            width: 270.0,
-                            height: 90.0,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                color: Colors.white,
-                                boxShadow: const [
-                                  BoxShadow(
-                                      blurRadius: 1.0,
-                                      color: Colors.black12,
-                                      spreadRadius: 2.0)
-                                ]),
-                            child: Container(
-                              padding: const EdgeInsets.all(7.0),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Row(
-                                    children: <Widget>[
-                                      const Text(
-                                        'Kayla',
-                                        style: TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 20.0),
-                                      ),
-                                      const SizedBox(width: 4.0),
-                                      Image.asset(
-                                        'assets/fonts/image/simbolo.png',
-                                        height: 20.0,
-                                        width: 20.0,
-                                      ),
-                                      const SizedBox(width: 110.0),
-                                      const Text(
-                                        '5.8km',
-                                        style: TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 20.0,
-                                            color: Colors.grey),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 9.0),
-                                  Row(
-                                    children: const <Widget>[
-                                      Text(
-                                        'Fate is wonderful.',
-                                        style: TextStyle(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 15.0,
-                                            color: Colors.grey),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    )),
-                Container(
-                  transform: Matrix4.translationValues(
-                      0.0, fabButtonanim.value * devHeight, 0.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      FloatingActionButton(
-                        elevation: 0.0,
-                        onPressed: () {},
-                        child: const Icon(Icons.close, color: Colors.black),
-                        backgroundColor: Colors.white,
-                      ),
-                      Container(
-                        height: 70.0,
-                        width: 70.0,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(35.0),
-                          border: Border.all(
-                              color: Colors.transparent,
-                              style: BorderStyle.solid,
-                              width: 2.0),
-                        ),
-                        // ignore: avoid_unnecessary_containers
-                        child: Container(
-                          child: Center(
-                            child: IconButton(
-                              icon: Image.asset(
-                                  'assets/fonts/image/chatbubble.png'),
-                              color: Colors.lightBlueAccent[300],
-                              onPressed: () {},
-                            ),
-                          ),
-                        ),
-                      ),
-                      FloatingActionButton(
-                        elevation: 0.0,
-                        onPressed: () {},
-                        child: const Icon(Icons.favorite, color: Colors.pink),
-                        backgroundColor: Colors.white,
-                      )
-                    ],
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0.8,
+        title: Text(
+          'All project',
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
+        ),
+        backgroundColor: Colors.lightBlue,
+        centerTitle: true,
+      ),
+      body: ListView(
+        scrollDirection: Axis.vertical,
+        children: [
+          Container(
+            child: Column(
+              children: [
+                ListTile(
+                  leading: Icon(
+                    Icons.card_membership,
+                    size: 25,
                   ),
-                )
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/card');
+                    },
+                    child: Text('Card',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  thickness: 5,
+                  color: Colors.red,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.animation,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/anmations');
+                    },
+                    child: Text('anmations',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.red,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.food_bank_sharp,
+                    size: 30,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/image');
+                    },
+                    child: Text('Image coursel',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.red,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.person,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/profile');
+                    },
+                    child: Text('Profile',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.red,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.signal_cellular_off_sharp,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/signup');
+                    },
+                    child: Text('Signup',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.red,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.travel_explore,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/travel');
+                    },
+                    child: Text('Travel',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.travel_explore,
+                //     size: 25,
+                //   ),
+                //   title: Text('Travellll',
+                //       style:
+                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                // ),
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.travel_explore,
+                //     size: 25,
+                //   ),
+                //   title: Text('Travellll',
+                //       style:
+                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                // ),
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.travel_explore,
+                //     size: 25,
+                //   ),
+                //   title: Text('Travellll',
+                //       style:
+                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                // ),
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.travel_explore,
+                //     size: 25,
+                //   ),
+                //   title: Text('Travellll',
+                //       style:
+                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                // ),
               ],
             ),
-          );
-        });
+          ),
+        ],
+      ),
+    );
   }
 }

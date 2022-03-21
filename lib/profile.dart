@@ -1,15 +1,19 @@
 // ignore_for_file: sized_box_for_whitespace
 
+import 'package:card/signup.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Profile());
 
-class MyApp extends StatelessWidget {
+class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
+      routes: {
+        '/signu': (context) => SignupPage(),
+      },
     );
   }
 }
@@ -84,16 +88,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     )),
                 const SizedBox(height: 25.0),
-                Container(
-                    height: 30.0,
-                    width: 95.0,
-                    child: Material(
-                      borderRadius: BorderRadius.circular(20.0),
-                      shadowColor: Colors.redAccent,
-                      color: Colors.red,
-                      elevation: 7.0,
-                      child: GestureDetector(
-                        onTap: () {},
+                InkWell(
+                  onTap: (() {
+                    Navigator.of(context).pushNamed('/signu');
+                  }),
+                  child: Container(
+                      height: 30.0,
+                      width: 95.0,
+                      child: Material(
+                        borderRadius: BorderRadius.circular(20.0),
+                        shadowColor: Colors.redAccent,
+                        color: Colors.red,
+                        elevation: 7.0,
                         child: const Center(
                           child: Text(
                             'Log out',
@@ -101,8 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 color: Colors.white, fontFamily: 'Montserrat'),
                           ),
                         ),
-                      ),
-                    ))
+                      )),
+                )
               ],
             ))
       ],

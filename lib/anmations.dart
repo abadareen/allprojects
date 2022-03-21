@@ -1,15 +1,19 @@
+import 'package:card/signup.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const Anmations());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+class Anmations extends StatelessWidget {
+  const Anmations({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: <String, WidgetBuilder>{},
       home: const MyHomePage(),
+      routes: {
+        '/register': (context) => SignupPage(),
+        // '/myhome': ((context) => MyHomePage()),
+      },
     );
   }
 }
@@ -213,14 +217,29 @@ class _MyHomePageState extends State<MyHomePage>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.green, width: 5),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: InkWell(
+                          onTap: () => Navigator.pop(context, true),
+                          child: Text(
+                            'Back To Home',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10.0),
                       const Text(
                         'New to Spotify ?',
                         style: TextStyle(fontFamily: 'Montserrat'),
                       ),
-                      const SizedBox(width: 5.0),
+                      const SizedBox(width: 10.0),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).pushNamed('/signup');
+                          Navigator.of(context).pushNamed('/register');
                         },
                         child: const Text(
                           'Register',
