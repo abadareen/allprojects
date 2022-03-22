@@ -1,8 +1,11 @@
 import 'package:card/anmations.dart';
 import 'package:card/awayAndinvisble.dart';
+import 'package:card/cakes.dart';
 import 'package:card/card.dart';
-import 'package:card/nextAndPrev.dart';
+import 'package:card/food.dart';
+import 'package:card/furniture.dart';
 import 'package:card/profile.dart';
+import 'package:card/signup.dart';
 import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
 
@@ -36,18 +39,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/card': (context) => Cardd(),
-        '/anmations': (context) => Anmations(),
+        '/anmations': (context) => Anmation(),
         '/profile': (context) => Profile(),
-        '/image': (context) => Imagecour(),
+        '/image': (context) => ImageCou(),
         '/travel': (context) => Travel(),
         '/away': (context) => Away(),
-        '/next': (context) => NextAndPrev(),
+        '/signu': (context) => SignupP(),
+        '/cha': (context) => Profile(),
+        '/food': (context) => Food(),
+        '/cake': (context) => cakes(),
+        '/fur': (context) => Fur(),
       },
     );
   }
 }
-
-class ProfilePage {}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key key, this.title}) : super(key: key);
@@ -121,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Divider(
                   thickness: 5,
-                  color: Colors.red,
+                  color: Colors.grey,
                 ),
                 ListTile(
                   leading: Icon(
@@ -138,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.red,
+                  color: Colors.grey,
                   thickness: 5,
                 ),
                 ListTile(
@@ -156,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.red,
+                  color: Colors.grey,
                   thickness: 5,
                 ),
                 ListTile(
@@ -174,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.red,
+                  color: Colors.grey,
                   thickness: 5,
                 ),
                 ListTile(
@@ -184,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   title: InkWell(
                     onTap: () {
-                      Navigator.pushNamed((context), '/signup');
+                      Navigator.pushNamed((context), '/signu');
                     },
                     child: Text('Signup',
                         style: TextStyle(
@@ -192,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.red,
+                  color: Colors.grey,
                   thickness: 5,
                 ),
                 ListTile(
@@ -209,6 +214,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
+                Divider(
+                  color: Colors.grey,
+                  thickness: 5,
+                ),
                 ListTile(
                   leading: Icon(
                     Icons.offline_bolt,
@@ -223,38 +232,79 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
+
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.skip_next,
+                //     size: 25,
+                //   ),
+                //   title: InkWell(
+                //     onTap: () {
+                //       Navigator.pushNamed((context), '/next');
+                //     },
+                //     child: Text('Next',
+                //         style: TextStyle(
+                //             fontSize: 25, fontWeight: FontWeight.bold)),
+                //   ),
+                // ),
+                Divider(
+                  color: Colors.grey,
+                  thickness: 5,
+                ),
                 ListTile(
                   leading: Icon(
-                    Icons.travel_explore,
+                    Icons.food_bank_outlined,
                     size: 25,
                   ),
                   title: InkWell(
                     onTap: () {
-                      Navigator.pushNamed((context), '/next');
+                      Navigator.pushNamed((context), '/food');
                     },
-                    child: Text('Next',
+                    child: Text('Food',
                         style: TextStyle(
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.travel_explore,
-                //     size: 25,
-                //   ),
-                //   title: Text('Travellll',
-                //       style:
-                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                // ),
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.travel_explore,
-                //     size: 25,
-                //   ),
-                //   title: Text('Travellll',
-                //       style:
-                //           TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                // ),
+                Divider(
+                  color: Colors.grey,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.cake,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/cake');
+                    },
+                    child: Text('Cakes',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.chair,
+                    size: 25,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/fur');
+                    },
+                    child: Text('Furniture',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.grey,
+                  thickness: 5,
+                ),
               ],
             ),
           ),

@@ -1,31 +1,13 @@
-import 'package:card/signup.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const Anmations());
-
-class Anmations extends StatelessWidget {
-  const Anmations({Key key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
-      routes: {
-        '/register': (context) => SignupPage(),
-        // '/myhome': ((context) => MyHomePage()),
-      },
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
+class Anmation extends StatefulWidget {
+  const Anmation({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
+class _MyHomePageState extends State<Anmation>
     with SingleTickerProviderStateMixin {
   Animation animation, delayedAnimation, muchDelayedAnimation;
   AnimationController animationController;
@@ -223,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage>
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: InkWell(
-                          onTap: () => Navigator.pop(context, true),
+                          onTap: () => Navigator.of(context).pop(),
                           child: Text(
                             'Back To Home',
                             style: TextStyle(
@@ -239,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage>
                       const SizedBox(width: 10.0),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).pushNamed('/register');
+                          Navigator.of(context).pushNamed('/signu');
                         },
                         child: const Text(
                           'Register',

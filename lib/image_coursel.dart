@@ -1,25 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Imagecour extends StatelessWidget {
-  const Imagecour({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
+class ImageCou extends StatefulWidget {
+  const ImageCou({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<ImageCou> {
   int photoIndex = 0;
   List<String> photos = [
     'assets/image/burger1.jpg',
@@ -63,12 +51,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       IconButton(
                         icon: const Icon(Icons.arrow_back_ios),
                         color: Colors.white,
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                       ),
                       IconButton(
                         icon: const Icon(Icons.favorite),
                         color: Colors.pink,
-                        onPressed: () {},
+                        onPressed: () {
+                          // Navigator.of(context).pop();
+                        },
                       )
                     ],
                   ),
@@ -141,6 +133,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 15.0),
+                    InkWell(
+                      child: Icon(Icons.arrow_back),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
                     const Text(
                       'The Cinnamon Snail',
                       style: TextStyle(
