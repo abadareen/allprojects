@@ -1,3 +1,4 @@
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 
 class Fur extends StatefulWidget {
@@ -45,18 +46,6 @@ class _MyHomePageState extends State<Fur> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(getColorHexFromStr('#FDD148')),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
       body: ListView(
         children: <Widget>[
           Column(
@@ -98,24 +87,19 @@ class _MyHomePageState extends State<Fur> with SingleTickerProviderStateMixin {
                       Row(
                         children: <Widget>[
                           SizedBox(width: 15.0),
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/cha');
-                            },
-                            child: Container(
-                              alignment: Alignment.topLeft,
-                              height: 50.0,
-                              width: 50.0,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25.0),
-                                  border: Border.all(
-                                      color: Colors.white,
-                                      style: BorderStyle.solid,
-                                      width: 2.0),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/image/chris.jpg'))),
-                            ),
+                          Container(
+                            alignment: Alignment.topLeft,
+                            height: 50.0,
+                            width: 50.0,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25.0),
+                                border: Border.all(
+                                    color: Colors.white,
+                                    style: BorderStyle.solid,
+                                    width: 2.0),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/image/chris.jpg'))),
                           ),
                           SizedBox(
                               width: MediaQuery.of(context).size.width - 120.0),
@@ -284,8 +268,18 @@ class _MyHomePageState extends State<Fur> with SingleTickerProviderStateMixin {
           tabs: <Widget>[
             Tab(icon: Icon(Icons.event_seat, color: Colors.yellow)),
             Tab(icon: Icon(Icons.timer, color: Colors.grey)),
-            Tab(icon: Icon(Icons.shopping_cart, color: Colors.grey)),
-            Tab(icon: Icon(Icons.person_outline, color: Colors.grey))
+            InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/shop');
+                },
+                child:
+                    Tab(icon: Icon(Icons.shopping_cart, color: Colors.grey))),
+            InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed('/stats');
+                },
+                child:
+                    Tab(icon: Icon(Icons.person_outline, color: Colors.grey)))
           ],
         ),
       ),
@@ -330,12 +324,14 @@ class _MyHomePageState extends State<Fur> with SingleTickerProviderStateMixin {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
                             color: isFavorite
-                                ? Colors.grey.withOpacity(0.2)
+                                ? Colors.white.withOpacity(0.2)
                                 : Colors.white),
-                        child: Center(
-                          child: isFavorite
-                              ? Icon(Icons.favorite_border)
-                              : Icon(Icons.favorite, color: Colors.red),
+                        child: FavoriteButton(
+                          isFavorite: true,
+                          // iconDisabledColor: Colors.white,
+                          valueChanged: (_isFavorite) {
+                            print('Is Favorite : $_isFavorite');
+                          },
                         ),
                       ),
                     )

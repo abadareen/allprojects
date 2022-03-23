@@ -1,35 +1,11 @@
-// ignore_for_file: sized_box_for_whitespace
-
-import 'package:card/profilebeach.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(Travel());
-
-class Travel extends StatelessWidget {
-  const Travel({Key key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Inkell',
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-      routes: {
-        '/profile': (context) => ProfilePage(),
-      },
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key key}) : super(key: key);
-
+class Travel extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
+class _MyHomePageState extends State<Travel>
     with SingleTickerProviderStateMixin {
   TabController tabController;
 
@@ -63,6 +39,14 @@ class _MyHomePageState extends State<MyHomePage>
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
+                InkWell(
+                    onTap: (() {
+                      Navigator.of(context).pop();
+                    }),
+                    child: Icon(Icons.arrow_back)),
+                SizedBox(
+                  width: 25,
+                ),
                 Text(
                   'travelogram',
                   style: TextStyle(
@@ -92,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage>
                         image: const DecorationImage(
                             image: AssetImage('assets/image/chris.jpg'))),
                   ),
-                )
+                ),
               ],
             ),
           ),

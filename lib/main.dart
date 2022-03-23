@@ -2,10 +2,14 @@ import 'package:card/anmations.dart';
 import 'package:card/awayAndinvisble.dart';
 import 'package:card/cakes.dart';
 import 'package:card/card.dart';
+import 'package:card/fashion_designs.dart';
 import 'package:card/food.dart';
 import 'package:card/furniture.dart';
+import 'package:card/minimalDesigns.dart';
 import 'package:card/profile.dart';
+import 'package:card/shoppingCart.dart';
 import 'package:card/signup.dart';
+import 'package:card/stats.dart';
 import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
 
@@ -49,6 +53,11 @@ class MyApp extends StatelessWidget {
         '/food': (context) => Food(),
         '/cake': (context) => cakes(),
         '/fur': (context) => Fur(),
+        '/stats': (context) => Stats(),
+        '/shop': (context) => ShopCart(),
+        '/mini': (context) => MinimalDes(),
+        '/home': (context) => MyApp(),
+        '/model': (context) => Fashion(),
       },
     );
   }
@@ -114,6 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   leading: Icon(
                     Icons.card_membership,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -126,12 +136,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 Divider(
                   thickness: 5,
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.animation,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -143,13 +154,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.food_bank_sharp,
                     size: 30,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -161,13 +173,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.person,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -179,31 +192,33 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.signal_cellular_off_sharp,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
                       Navigator.pushNamed((context), '/signu');
                     },
-                    child: Text('Signup',
+                    child: Text('Signin & Signup',
                         style: TextStyle(
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.travel_explore,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -215,13 +230,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.offline_bolt,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -232,29 +248,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
-
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.skip_next,
-                //     size: 25,
-                //   ),
-                //   title: InkWell(
-                //     onTap: () {
-                //       Navigator.pushNamed((context), '/next');
-                //     },
-                //     child: Text('Next',
-                //         style: TextStyle(
-                //             fontSize: 25, fontWeight: FontWeight.bold)),
-                //   ),
-                // ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.food_bank_outlined,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -266,13 +268,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.cake,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -284,13 +287,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
                 ListTile(
                   leading: Icon(
                     Icons.chair,
                     size: 25,
+                    color: Colors.redAccent,
                   ),
                   title: InkWell(
                     onTap: () {
@@ -302,8 +306,42 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.lightBlueAccent,
                   thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.design_services,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/mini');
+                    },
+                    child: Text('Minimal Designs',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.model_training_outlined,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/model');
+                    },
+                    child: Text('Fashion Designs',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
                 ),
               ],
             ),
