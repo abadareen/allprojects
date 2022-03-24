@@ -7,6 +7,7 @@ import 'package:card/food.dart';
 import 'package:card/furniture.dart';
 import 'package:card/minimalDesigns.dart';
 import 'package:card/profile.dart';
+import 'package:card/secondFastion.dart';
 import 'package:card/shoppingCart.dart';
 import 'package:card/signup.dart';
 import 'package:card/stats.dart';
@@ -58,6 +59,7 @@ class MyApp extends StatelessWidget {
         '/mini': (context) => MinimalDes(),
         '/home': (context) => MyApp(),
         '/model': (context) => Fashion(),
+        '/second': (context) => SecondPage(),
       },
     );
   }
