@@ -2,9 +2,11 @@ import 'package:card/anmations.dart';
 import 'package:card/awayAndinvisble.dart';
 import 'package:card/cakes.dart';
 import 'package:card/card.dart';
+import 'package:card/clean_designs.dart';
 import 'package:card/fashion_designs.dart';
 import 'package:card/food.dart';
 import 'package:card/furniture.dart';
+import 'package:card/hairstylist.dart';
 import 'package:card/minimalDesigns.dart';
 import 'package:card/profile.dart';
 import 'package:card/secondFastion.dart';
@@ -13,7 +15,6 @@ import 'package:card/signup.dart';
 import 'package:card/stats.dart';
 import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
-
 import 'image_coursel.dart';
 
 void main() {
@@ -60,6 +61,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => MyApp(),
         '/model': (context) => Fashion(),
         '/second': (context) => SecondPage(),
+        '/chef': (context) => Chef(),
+        '/hair': (context) => Hair(),
       },
     );
   }
@@ -345,6 +348,87 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),
                 ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.design_services_sharp,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/chef');
+                    },
+                    child: Text('Clean designs / Chef profile',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.design_services_sharp,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/hair');
+                    },
+                    child: Text('Clean designs / Hairstylist ',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.design_services_sharp,
+                //     size: 25,
+                //     color: Colors.redAccent,
+                //   ),
+                // )
+                //   title: InkWell(
+                //     onTap: () {
+                //       Navigator.pushNamed((context), '/chef');
+                //     },
+                //     child: Text('Clean designs / Chef profile',
+                //         style: TextStyle(
+                //             fontSize: 25, fontWeight: FontWeight.bold)),
+                //   ),
+                // ),
+                // Divider(
+                //   color: Colors.lightBlueAccent,
+                //   thickness: 5,
+                // ),
+                // ListTile(
+                //   leading: Icon(
+                //     Icons.design_services_sharp,
+                //     size: 25,
+                //     color: Colors.redAccent,
+                //   ),
+                //   title: InkWell(
+                //     onTap: () {
+                //       Navigator.pushNamed((context), '/chef');
+                //     },
+                //     child: Text('Clean designs / Chef profile',
+                //         style: TextStyle(
+                //             fontSize: 25, fontWeight: FontWeight.bold)),
+                //   ),
+                // ),
+                // Divider(
+                //   color: Colors.lightBlueAccent,
+                //   thickness: 5,
+                // ),
               ],
             ),
           ),
