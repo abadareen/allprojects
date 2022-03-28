@@ -3,6 +3,7 @@ import 'package:card/awayAndinvisble.dart';
 import 'package:card/cakes.dart';
 import 'package:card/card.dart';
 import 'package:card/clean_designs.dart';
+import 'package:card/currencyConvert.dart';
 import 'package:card/fashion_designs.dart';
 import 'package:card/food.dart';
 import 'package:card/furniture.dart';
@@ -13,6 +14,7 @@ import 'package:card/secondFastion.dart';
 import 'package:card/shoppingCart.dart';
 import 'package:card/signup.dart';
 import 'package:card/stats.dart';
+import 'package:card/takeaway.dart';
 import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
 import 'image_coursel.dart';
@@ -63,6 +65,8 @@ class MyApp extends StatelessWidget {
         '/second': (context) => SecondPage(),
         '/chef': (context) => Chef(),
         '/hair': (context) => Hair(),
+        '/take': (context) => Take(),
+        '/curr': (context) => Curr(),
       },
     );
   }
@@ -390,45 +394,44 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.lightBlueAccent,
                   thickness: 5,
                 ),
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.design_services_sharp,
-                //     size: 25,
-                //     color: Colors.redAccent,
-                //   ),
-                // )
-                //   title: InkWell(
-                //     onTap: () {
-                //       Navigator.pushNamed((context), '/chef');
-                //     },
-                //     child: Text('Clean designs / Chef profile',
-                //         style: TextStyle(
-                //             fontSize: 25, fontWeight: FontWeight.bold)),
-                //   ),
-                // ),
-                // Divider(
-                //   color: Colors.lightBlueAccent,
-                //   thickness: 5,
-                // ),
-                // ListTile(
-                //   leading: Icon(
-                //     Icons.design_services_sharp,
-                //     size: 25,
-                //     color: Colors.redAccent,
-                //   ),
-                //   title: InkWell(
-                //     onTap: () {
-                //       Navigator.pushNamed((context), '/chef');
-                //     },
-                //     child: Text('Clean designs / Chef profile',
-                //         style: TextStyle(
-                //             fontSize: 25, fontWeight: FontWeight.bold)),
-                //   ),
-                // ),
-                // Divider(
-                //   color: Colors.lightBlueAccent,
-                //   thickness: 5,
-                // ),
+                ListTile(
+                  leading: Icon(
+                    Icons.emoji_food_beverage_sharp,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/take');
+                    },
+                    child: Text('Clean designs / Gourmet takeaway',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.money,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/curr');
+                    },
+                    child: Text('Currency Convert',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
               ],
             ),
           ),
