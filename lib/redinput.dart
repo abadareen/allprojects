@@ -19,7 +19,7 @@ class _InputRedPageState extends State<InputRedPage> {
     return Scaffold(
       backgroundColor: Color(0xFFEC5759),
       body: Column(
-        children: <Widget>[
+        children: [
           SizedBox(height: 25.0),
           InkWell(
             onTap: () {
