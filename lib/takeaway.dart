@@ -100,7 +100,7 @@ class _TakeState extends State<Take> with SingleTickerProviderStateMixin {
                 labelColor: Color(0xFFFE6E22),
                 indicatorWeight: 4,
                 unselectedLabelColor: Colors.grey,
-                isScrollable: true,
+                isScrollable: false,
                 tabs: [
                   Tab(
                     child: Text(

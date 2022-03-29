@@ -6,6 +6,7 @@ import 'package:card/clean_designs.dart';
 import 'package:card/currencyConvert.dart';
 import 'package:card/fashion_designs.dart';
 import 'package:card/food.dart';
+import 'package:card/fruits.dart';
 import 'package:card/furniture.dart';
 import 'package:card/hairstylist.dart';
 import 'package:card/minimalDesigns.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         '/hair': (context) => Hair(),
         '/take': (context) => Take(),
         '/curr': (context) => Curr(),
+        '/fru': (context) => Fruits(),
       },
     );
   }
@@ -415,7 +417,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 ListTile(
                   leading: Icon(
-                    Icons.money,
+                    Icons.money_off,
                     size: 25,
                     color: Colors.redAccent,
                   ),
@@ -424,6 +426,25 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.pushNamed((context), '/curr');
                     },
                     child: Text('Currency Convert',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.apple,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/fru');
+                    },
+                    child: Text('Fruits',
                         style: TextStyle(
                             fontSize: 25, fontWeight: FontWeight.bold)),
                   ),

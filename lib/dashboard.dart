@@ -1,4 +1,3 @@
-import 'package:card/currencyService.dart';
 import 'package:card/currencylist.dart';
 import 'package:card/inputWhite.dart';
 import 'package:card/redinput.dart';
@@ -41,6 +40,19 @@ class _DashboardPageState extends State<DashboardPage> {
             child: Center(
                 child: Column(
               children: <Widget>[
+                InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
                 SizedBox(height: 30),
                 InkWell(
                     onTap: () {

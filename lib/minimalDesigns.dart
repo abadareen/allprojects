@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MinimalDes> {
             ),
             SizedBox(height: 15.0),
             firstStyleRow('assets/image/cone.jpeg', 'assets/image/letter.jpeg',
-                'assets/chris.jpg'),
+                'assets/image/chris.jpg'),
             SizedBox(height: 10.0),
             secondStyleRow('assets/image/window.jpeg',
                 'assets/image/cactus.jpeg', 'assets/image/tomcruise.jpg'),
@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MinimalDes> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15.0),
                               image: DecorationImage(
-                                  image: AssetImage('assets/chris.jpg'),
+                                  image: AssetImage('assets/image/chris.jpg'),
                                   fit: BoxFit.cover)),
                         ),
                         Column(
