@@ -16,15 +16,19 @@ dependencies:
   flutter:
     sdk: flutter
   favorite_button: ^0.0.4
+  google_fonts: ^2.3.1
+
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 
 
@@ -62,12 +66,14 @@ flutter:
   #       - asset: assets/Montserrat-Regular.ttf
         # - asset: assets/Montserrat-ExtraBoldItalic.ttf
           # style: italic
-  fonts:
-    - family: Quicksand
-      fonts:
-        - asset: assets/image/Quicksand-Bold.ttf
-        - asset: assets/image/Quicksand-Regular.ttf
-          weight: 700
+  # fonts:
+  #   - family: Quicksand
+  #     fonts:
+  #       - asset: assets/image/Quicksand-Bold.ttf
+  #       - asset: assets/image/Quicksand-Regular.ttf
+  #       - asset: fonts/image/Raleway-Regular.ttf
+  #       - asset: fonts/image/Raleway-Italic.ttf
+  #         weight: 700
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf

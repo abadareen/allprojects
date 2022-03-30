@@ -11,6 +11,7 @@ import 'package:card/furniture.dart';
 import 'package:card/hairstylist.dart';
 import 'package:card/minimalDesigns.dart';
 import 'package:card/profile.dart';
+import 'package:card/profileSecond.dart';
 import 'package:card/secondFastion.dart';
 import 'package:card/shoppingCart.dart';
 import 'package:card/signup.dart';
@@ -18,6 +19,7 @@ import 'package:card/stats.dart';
 import 'package:card/takeaway.dart';
 import 'package:card/travel.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'image_coursel.dart';
 
 void main() {
@@ -69,6 +71,7 @@ class MyApp extends StatelessWidget {
         '/take': (context) => Take(),
         '/curr': (context) => Curr(),
         '/fru': (context) => Fruits(),
+        '/pro': (context) => ProfileSecond(),
       },
     );
   }
@@ -106,20 +109,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0.8,
         title: Text(
           'All project',
-          style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 30, color: Colors.white),
+          style: GoogleFonts.pacifico(textStyle: TextStyle(fontSize: 30)),
         ),
         backgroundColor: Colors.lightBlue,
         centerTitle: true,
@@ -140,9 +136,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.of(context).pushNamed('/card');
                     },
-                    child: Text('Card',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Card',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -159,9 +157,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/anmations');
                     },
-                    child: Text('anmations',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'anmations',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -178,9 +178,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/image');
                     },
-                    child: Text('Image coursel',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Image coursel',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -197,9 +199,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/profile');
                     },
-                    child: Text('Profile',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Profile',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -216,9 +220,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/signu');
                     },
-                    child: Text('Signin & Signup',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Signin & Signup',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -235,9 +241,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/travel');
                     },
-                    child: Text('Travel',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Travel',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -254,9 +262,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/away');
                     },
-                    child: Text('away',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'away',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -273,9 +283,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/food');
                     },
-                    child: Text('Food',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Food',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -292,9 +304,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/cake');
                     },
-                    child: Text('Cakes',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Cakes',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -311,9 +325,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/fur');
                     },
-                    child: Text('Furniture',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Furniture',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -330,9 +346,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/mini');
                     },
-                    child: Text('Minimal Designs',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Minimal Designs',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -349,9 +367,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/model');
                     },
-                    child: Text('Fashion Designs',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Fashion Designs',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -368,9 +388,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/chef');
                     },
-                    child: Text('Clean designs / Chef profile',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Clean designs / Chef profile',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -387,9 +409,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/hair');
                     },
-                    child: Text('Clean designs / Hairstylist ',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Clean designs / Hairstylist ',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -406,9 +430,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/take');
                     },
-                    child: Text('Clean designs / Gourmet takeaway',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Clean designs / Gourmet takeaway',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -425,9 +451,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/curr');
                     },
-                    child: Text('Currency Convert',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Currency Convert',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
@@ -444,9 +472,32 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       Navigator.pushNamed((context), '/fru');
                     },
-                    child: Text('Fruits',
-                        style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'Fruits',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.person_rounded,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/pro');
+                    },
+                    child: Text(
+                      'ProfileSecond',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
                   ),
                 ),
                 Divider(
