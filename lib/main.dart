@@ -2,6 +2,7 @@ import 'package:card/anmations.dart';
 import 'package:card/awayAndinvisble.dart';
 import 'package:card/cakes.dart';
 import 'package:card/card.dart';
+import 'package:card/carsarvice.dart';
 import 'package:card/clean_designs.dart';
 import 'package:card/currencyConvert.dart';
 import 'package:card/fashion_designs.dart';
@@ -12,6 +13,7 @@ import 'package:card/hairstylist.dart';
 import 'package:card/minimalDesigns.dart';
 import 'package:card/profile.dart';
 import 'package:card/profileSecond.dart';
+import 'package:card/rental.dart';
 import 'package:card/secondFastion.dart';
 import 'package:card/shoppingCart.dart';
 import 'package:card/signup.dart';
@@ -72,6 +74,8 @@ class MyApp extends StatelessWidget {
         '/curr': (context) => Curr(),
         '/fru': (context) => Fruits(),
         '/pro': (context) => ProfileSecond(),
+        '/car': (context) => Car(),
+        '/rent': (context) => Rental(),
       },
     );
   }
@@ -495,6 +499,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Text(
                       'ProfileSecond',
+                      style: GoogleFonts.pacifico(
+                          textStyle: TextStyle(fontSize: 30)),
+                    ),
+                  ),
+                ),
+                Divider(
+                  color: Colors.lightBlueAccent,
+                  thickness: 5,
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.person_rounded,
+                    size: 25,
+                    color: Colors.redAccent,
+                  ),
+                  title: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed((context), '/car');
+                    },
+                    child: Text(
+                      'Car Sarvice',
                       style: GoogleFonts.pacifico(
                           textStyle: TextStyle(fontSize: 30)),
                     ),
