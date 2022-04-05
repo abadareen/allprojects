@@ -11,6 +11,8 @@ import 'package:card/fruits.dart';
 import 'package:card/furniture.dart';
 import 'package:card/hairstylist.dart';
 import 'package:card/minimalDesigns.dart';
+import 'package:card/plantdetails.dart';
+import 'package:card/plants.dart';
 import 'package:card/profile.dart';
 import 'package:card/profileSecond.dart';
 import 'package:card/rental.dart';
@@ -76,6 +78,8 @@ class MyApp extends StatelessWidget {
         '/pro': (context) => ProfileSecond(),
         '/car': (context) => Car(),
         '/rent': (context) => Rental(),
+        '/plant': (context) => Plant(),
+        '/pla': (context) => PlantDetail(),
       },
     );
   }
@@ -113,6 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -124,415 +130,435 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.lightBlue,
         centerTitle: true,
       ),
-      body: ListView(
-        scrollDirection: Axis.vertical,
-        children: [
-          Container(
-            child: Column(
-              children: [
-                ListTile(
-                  leading: Icon(
-                    Icons.card_membership,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.of(context).pushNamed('/card');
-                    },
-                    child: Text(
-                      'Card',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
+      body: Container(
+        height: height,
+        width: width,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ListTile(
+                leading: Icon(
+                  Icons.card_membership,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                Divider(
-                  thickness: 5,
-                  color: Colors.lightBlueAccent,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.animation,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/anmations');
-                    },
-                    child: Text(
-                      'anmations',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/card');
+                  },
+                  child: Text(
+                    'Card',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                thickness: 5,
+                color: Colors.lightBlueAccent,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.animation,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.food_bank_sharp,
-                    size: 30,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/image');
-                    },
-                    child: Text(
-                      'Image coursel',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.person,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/profile');
-                    },
-                    child: Text(
-                      'Profile',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/anmations');
+                  },
+                  child: Text(
+                    'anmations',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.food_bank_sharp,
+                  size: 30,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.signal_cellular_off_sharp,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/signu');
-                    },
-                    child: Text(
-                      'Signin & Signup',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.travel_explore,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/travel');
-                    },
-                    child: Text(
-                      'Travel',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/image');
+                  },
+                  child: Text(
+                    'Image coursel',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.person,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.offline_bolt,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/away');
-                    },
-                    child: Text(
-                      'away',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.food_bank_outlined,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/food');
-                    },
-                    child: Text(
-                      'Food',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/profile');
+                  },
+                  child: Text(
+                    'Profile',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.signal_cellular_off_sharp,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.cake,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/cake');
-                    },
-                    child: Text(
-                      'Cakes',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.chair,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/fur');
-                    },
-                    child: Text(
-                      'Furniture',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/signu');
+                  },
+                  child: Text(
+                    'Signin & Signup',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.travel_explore,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.design_services,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/mini');
-                    },
-                    child: Text(
-                      'Minimal Designs',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.model_training_outlined,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/model');
-                    },
-                    child: Text(
-                      'Fashion Designs',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/travel');
+                  },
+                  child: Text(
+                    'Travel',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.offline_bolt,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.design_services_sharp,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/chef');
-                    },
-                    child: Text(
-                      'Clean designs / Chef profile',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.design_services_sharp,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/hair');
-                    },
-                    child: Text(
-                      'Clean designs / Hairstylist ',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/away');
+                  },
+                  child: Text(
+                    'away',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.food_bank_outlined,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.emoji_food_beverage_sharp,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/take');
-                    },
-                    child: Text(
-                      'Clean designs / Gourmet takeaway',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.money_off,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/curr');
-                    },
-                    child: Text(
-                      'Currency Convert',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/food');
+                  },
+                  child: Text(
+                    'Food',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.cake,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.apple,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/fru');
-                    },
-                    child: Text(
-                      'Fruits',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
-                  ),
-                ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
-                ),
-                ListTile(
-                  leading: Icon(
-                    Icons.person_rounded,
-                    size: 25,
-                    color: Colors.redAccent,
-                  ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/pro');
-                    },
-                    child: Text(
-                      'ProfileSecond',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/cake');
+                  },
+                  child: Text(
+                    'Cakes',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.chair,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-                ListTile(
-                  leading: Icon(
-                    Icons.person_rounded,
-                    size: 25,
-                    color: Colors.redAccent,
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/fur');
+                  },
+                  child: Text(
+                    'Furniture',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
-                  title: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed((context), '/car');
-                    },
-                    child: Text(
-                      'Car Sarvice',
-                      style: GoogleFonts.pacifico(
-                          textStyle: TextStyle(fontSize: 30)),
-                    ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.design_services,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/mini');
+                  },
+                  child: Text(
+                    'Minimal Designs',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
                   ),
                 ),
-                Divider(
-                  color: Colors.lightBlueAccent,
-                  thickness: 5,
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.model_training_outlined,
+                  size: 25,
+                  color: Colors.redAccent,
                 ),
-              ],
-            ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/model');
+                  },
+                  child: Text(
+                    'Fashion Designs',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.design_services_sharp,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/chef');
+                  },
+                  child: Text(
+                    'Clean designs / Chef profile',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.design_services_sharp,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/hair');
+                  },
+                  child: Text(
+                    'Clean designs / Hairstylist ',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.emoji_food_beverage_sharp,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/take');
+                  },
+                  child: Text(
+                    'Clean designs / Gourmet takeaway',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.money_off,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/curr');
+                  },
+                  child: Text(
+                    'Currency Convert',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.apple,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/fru');
+                  },
+                  child: Text(
+                    'Fruits',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.person_rounded,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/pro');
+                  },
+                  child: Text(
+                    'ProfileSecond',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.person_rounded,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/car');
+                  },
+                  child: Text(
+                    'Car Sarvice',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.person_rounded,
+                  size: 25,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/plant');
+                  },
+                  child: Text(
+                    'Plants',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
