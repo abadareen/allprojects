@@ -16,6 +16,8 @@ import 'package:card/plants.dart';
 import 'package:card/profile.dart';
 import 'package:card/profileSecond.dart';
 import 'package:card/rental.dart';
+import 'package:card/rentalService.dart';
+import 'package:card/scrollDemo.dart';
 import 'package:card/secondFastion.dart';
 import 'package:card/shoppingCart.dart';
 import 'package:card/signup.dart';
@@ -80,6 +82,8 @@ class MyApp extends StatelessWidget {
         '/rent': (context) => Rental(),
         '/plant': (context) => Plant(),
         '/pla': (context) => PlantDetail(),
+        '/scro': (context) => Scroll(),
+        '/rental': (context) => RentalService(),
       },
     );
   }
@@ -139,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.card_membership,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -160,7 +164,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.animation,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -202,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.person,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -223,7 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.signal_cellular_off_sharp,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -244,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.travel_explore,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -265,7 +269,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.offline_bolt,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -286,7 +290,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.food_bank_outlined,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -307,7 +311,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.cake,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -328,7 +332,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.chair,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -349,7 +353,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.design_services,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -370,7 +374,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.model_training_outlined,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -391,7 +395,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.design_services_sharp,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -412,7 +416,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.design_services_sharp,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -433,7 +437,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.emoji_food_beverage_sharp,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -454,7 +458,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.money_off,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -475,7 +479,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.apple,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -496,7 +500,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ListTile(
                 leading: Icon(
                   Icons.person_rounded,
-                  size: 25,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -516,8 +520,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: Icon(
-                  Icons.person_rounded,
-                  size: 25,
+                  Icons.local_taxi,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -537,8 +541,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               ListTile(
                 leading: Icon(
-                  Icons.person_rounded,
-                  size: 25,
+                  Icons.auto_fix_high_rounded,
+                  size: 30,
                   color: Colors.redAccent,
                 ),
                 title: InkWell(
@@ -547,6 +551,48 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text(
                     'Plants',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.swap_horizontal_circle_outlined,
+                  size: 30,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/scro');
+                  },
+                  child: Text(
+                    'Scroll',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.swap_horizontal_circle_outlined,
+                  size: 30,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/rental');
+                  },
+                  child: Text(
+                    'Rental Service',
                     style: GoogleFonts.pacifico(
                         textStyle: TextStyle(fontSize: 30)),
                   ),

@@ -37,7 +37,9 @@ class _TakeState extends State<Take> with SingleTickerProviderStateMixin {
               child: IconButton(
                 icon: Icon(Icons.settings),
                 color: Colors.black.withOpacity(0.7),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
               ),
             ),
             Positioned(

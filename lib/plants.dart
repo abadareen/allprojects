@@ -34,10 +34,13 @@ class _PlantState extends State<Plant> with SingleTickerProviderStateMixin {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Icon(
-                    Icons.menu,
-                    color: Colors.grey,
-                    size: width * 0.1,
+                  InkWell(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Icon(
+                      Icons.menu,
+                      color: Colors.grey,
+                      size: width * 0.1,
+                    ),
                   ),
                   FloatingActionButton(
                       backgroundColor: Colors.grey.withOpacity(0.3),

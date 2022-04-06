@@ -152,7 +152,9 @@ class _MyHomePageState extends State<Stats>
                       alignment: Alignment.topRight,
                       child: IconButton(
                         icon: Icon(Icons.settings),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                         color: Colors.white,
                         iconSize: 30.0,
                       ),
