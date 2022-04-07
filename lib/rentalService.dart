@@ -1,3 +1,6 @@
+// ignore_for_file: missing_required_param
+
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class RentalService extends StatefulWidget {
@@ -6,7 +9,7 @@ class RentalService extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<RentalService> {
-  List allImgs = ['assets/image/picc1.jpg', 'assets/image/picc1.jpg'];
+  List allImgs = ['assets/image/picc1.jpg', 'assets/image/picc3.jpg'];
 
   @override
   Widget build(BuildContext context) {
@@ -34,183 +37,191 @@ class _MyHomePageState extends State<RentalService> {
           elevation: 0.0,
         ),
         body: ListView(
-          children: [
+          children: <Widget>[
             Stack(
               children: <Widget>[
                 Container(height: 300.0, color: Colors.transparent),
-                // CarouselSlider(
-                //     height: 300.0,
-                //     items: allImgs.map((i) {
-                //       return Builder(
-                //         builder: (BuildContext context) {
-                //           return Stack(
-                //             children: <Widget>[
-                //               Container(height: 300.0, color: Colors.transparent),
-                //               Padding(
-                //                 padding: EdgeInsets.all(8.0),
-                //                 child: Container(
-                //                   height: 200.0,
-                //                   decoration: BoxDecoration(
-                //                     borderRadius: BorderRadius.circular(7.0),
-                //                     image: DecorationImage(
-                //                       image: AssetImage(i),
-                //                       fit: BoxFit.cover
-                //                     )
-                //                   ),
-                //                 ),
-                //               ),
-                //               Positioned(
-                //                 left: 25.0,
-                //                 top: 150.0,
-                //                 child: Container(
-                //                   height: 100.0,
-                //                   width: 240.0,
-                //                   decoration: BoxDecoration(
-                //                     color: Colors.white.withOpacity(0.8),
-                //                     boxShadow: [
-                //                       BoxShadow(
-                //                         spreadRadius: 1.0,
-                //                         color: Colors.grey.withOpacity(0.4),
-                //                         blurRadius: 1.0
-                //                       )
-                //                     ],
-                //                     borderRadius: BorderRadius.circular(7.0)
-                //                   ),
-                //                   child: Container(
-                //                     width: 240.0,
-                //                     padding: EdgeInsets.only(left: 10.0, right: 10.0),
-                //                     child: Row(
-                //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //                       children: <Widget>[
-                //                         Column(
-                //                     crossAxisAlignment:
-                //                         CrossAxisAlignment.start,
-                //                     children: <Widget>[
-                //                       SizedBox(height: 15.0),
-                //                       Row(
-                //                         children: <Widget>[
-                //                           Text(
-                //                             'Kra water village',
-                //                             style: TextStyle(
-                //                                 fontFamily: 'Montserrat',
-                //                                 fontSize: 15.0),
-                //                           )
-                //                         ],
-                //                       ),
-                //                       SizedBox(height: 15.0),
-                //                       Row(
-                //                         children: <Widget>[
-                //                           Column(
-                //                             children: <Widget>[
-                //                               Text(
-                //                                 '18',
-                //                                 style: TextStyle(
-                //                                     fontFamily: 'Montserrat',
-                //                                     fontSize: 17.0,
-                //                                     fontWeight:
-                //                                         FontWeight.bold),
-                //                               ),
-                //                               SizedBox(height: 7.0),
-                //                               Text(
-                //                                 'Sell',
-                //                                 style: TextStyle(
-                //                                   fontFamily: 'Montserrat',
-                //                                   fontSize: 11.0,
-                //                                 ),
-                //                               )
-                //                             ],
-                //                           ),
-                //                           SizedBox(width: 25.0),
-                //                           Column(
-                //                             children: <Widget>[
-                //                               Text(
-                //                                 '74',
-                //                                 style: TextStyle(
-                //                                     fontFamily: 'Montserrat',
-                //                                     fontSize: 17.0,
-                //                                     fontWeight:
-                //                                         FontWeight.bold),
-                //                               ),
-                //                               SizedBox(height: 7.0),
-                //                               Text(
-                //                                 'Rent',
-                //                                 style: TextStyle(
-                //                                   fontFamily: 'Montserrat',
-                //                                   fontSize: 11.0,
-                //                                 ),
-                //                               )
-                //                             ],
-                //                           ),
-                //                           SizedBox(width: 25.0),
-                //                           Column(
-                //                             children: <Widget>[
-                //                               Text(
-                //                                 '36',
-                //                                 style: TextStyle(
-                //                                     fontFamily: 'Montserrat',
-                //                                     fontSize: 17.0,
-                //                                     fontWeight:
-                //                                         FontWeight.bold),
-                //                               ),
-                //                               SizedBox(height: 7.0),
-                //                               Text(
-                //                                 'Sublet',
-                //                                 style: TextStyle(
-                //                                   fontFamily: 'Montserrat',
-                //                                   fontSize: 11.0,
-                //                                 ),
-                //                               )
-                //                             ],
-                //                           )
-                //                         ],
-                //                       )
-                //                     ],
-                //                   ),
-                //                   Column(
-                //                     children: <Widget>[
-                //                       SizedBox(height: 15.0),
-                //                       Row(
-                //                         children: <Widget>[
-                //                           Icon(
-                //                             Icons.star,
-                //                             color: Colors.amber,
-                //                             size: 15.0,
-                //                           ),
-                //                           Text(
-                //                             '4.9',
-                //                             style: TextStyle(
-                //                                 fontFamily: 'Montserrat',
-                //                                 fontSize: 14.0,
-                //                                 color: Colors.amber,
-                //                                 fontWeight: FontWeight.bold),
-                //                           )
-                //                         ],
-                //                       ),
-                //                       SizedBox(height: 20.0),
-                //                       Container(
-                //                         height: 30.0,
-                //                         width: 30.0,
-                //                         decoration: BoxDecoration(
-                //                             color: Color(0xFF2560FA),
-                //                             borderRadius:
-                //                                 BorderRadius.circular(10.0)),
-                //                         child: Center(
-                //                           child: Icon(Icons.send,
-                //                               color: Colors.white, size: 14.0),
-                //                         ),
-                //                       )
-                //                     ],
-                //                   )
-                //                       ],
-                //                     ),
-                //                   ),
-                //                 ),
-                //               )
-                //             ],
-                //           );
-                //         },
-                //       );
-                //     }).toList()),
+                CarouselSlider(
+                    options: CarouselOptions(initialPage: 0),
+                    items: allImgs.map((i) {
+                      return Builder(
+                        builder: (BuildContext context) {
+                          return Stack(
+                            children: <Widget>[
+                              Container(
+                                  height: 300.0, color: Colors.transparent),
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 200.0,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(7.0),
+                                      image: DecorationImage(
+                                          image: AssetImage(i),
+                                          fit: BoxFit.cover)),
+                                ),
+                              ),
+                              Positioned(
+                                left: 25.0,
+                                top: 150.0,
+                                child: Container(
+                                  height: 100.0,
+                                  width: 240.0,
+                                  decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            spreadRadius: 1.0,
+                                            color: Colors.grey.withOpacity(0.4),
+                                            blurRadius: 1.0)
+                                      ],
+                                      borderRadius: BorderRadius.circular(7.0)),
+                                  child: Container(
+                                    width: 240.0,
+                                    padding: EdgeInsets.only(
+                                        left: 10.0, right: 10.0),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: <Widget>[
+                                            SizedBox(height: 15.0),
+                                            Row(
+                                              children: <Widget>[
+                                                Text(
+                                                  'Kra water village',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Montserrat',
+                                                      fontSize: 15.0),
+                                                )
+                                              ],
+                                            ),
+                                            SizedBox(height: 15.0),
+                                            Row(
+                                              children: <Widget>[
+                                                Column(
+                                                  children: <Widget>[
+                                                    Text(
+                                                      '18',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          fontSize: 17.0,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(height: 7.0),
+                                                    Text(
+                                                      'Sell',
+                                                      style: TextStyle(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        fontSize: 11.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                                SizedBox(width: 25.0),
+                                                Column(
+                                                  children: <Widget>[
+                                                    Text(
+                                                      '74',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          fontSize: 17.0,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(height: 7.0),
+                                                    Text(
+                                                      'Rent',
+                                                      style: TextStyle(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        fontSize: 11.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                                SizedBox(width: 25.0),
+                                                Column(
+                                                  children: <Widget>[
+                                                    Text(
+                                                      '36',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          fontSize: 17.0,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    SizedBox(height: 7.0),
+                                                    Text(
+                                                      'Sublet',
+                                                      style: TextStyle(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        fontSize: 11.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                        Column(
+                                          children: <Widget>[
+                                            SizedBox(height: 15.0),
+                                            Row(
+                                              children: <Widget>[
+                                                Icon(
+                                                  Icons.star,
+                                                  color: Colors.amber,
+                                                  size: 15.0,
+                                                ),
+                                                Text(
+                                                  '4.9',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Montserrat',
+                                                      fontSize: 14.0,
+                                                      color: Colors.amber,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                )
+                                              ],
+                                            ),
+                                            SizedBox(height: 20.0),
+                                            Container(
+                                              height: 30.0,
+                                              width: 30.0,
+                                              decoration: BoxDecoration(
+                                                  color: Color(0xFF2560FA),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10.0)),
+                                              child: Center(
+                                                child: Icon(Icons.send,
+                                                    color: Colors.white,
+                                                    size: 14.0),
+                                              ),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          );
+                        },
+                      );
+                    }).toList())
               ],
             ),
             SizedBox(height: 10.0),
@@ -242,7 +253,7 @@ class _MyHomePageState extends State<RentalService> {
                 children: <Widget>[
                   _buildCard('Gounuli', 'assets/image/chris.jpg', '3.7',
                       'The newly decorated new house is well furnished and has a beautiful environment'),
-                  _buildCard('Michelle', 'assets/image/hugh.jpg ', '4.3',
+                  _buildCard('Michelle', 'assets/image/hugh.jpg', '4.3',
                       'Country garden a villa want to add me')
                 ],
               ),

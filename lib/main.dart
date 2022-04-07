@@ -1,7 +1,6 @@
 import 'package:card/anmations.dart';
 import 'package:card/awayAndinvisble.dart';
 import 'package:card/cakes.dart';
-import 'package:card/card.dart';
 import 'package:card/carsarvice.dart';
 import 'package:card/clean_designs.dart';
 import 'package:card/currencyConvert.dart';
@@ -10,6 +9,7 @@ import 'package:card/food.dart';
 import 'package:card/fruits.dart';
 import 'package:card/furniture.dart';
 import 'package:card/hairstylist.dart';
+import 'package:card/listtest.dart';
 import 'package:card/minimalDesigns.dart';
 import 'package:card/plantdetails.dart';
 import 'package:card/plants.dart';
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/card': (context) => Cardd(),
+        '/list': (context) => ListTest(),
         '/anmations': (context) => Anmation(),
         '/profile': (context) => Profile(),
         '/image': (context) => ImageCou(),
@@ -148,10 +148,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 title: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushNamed('/card');
+                    Navigator.of(context).pushNamed('/list');
                   },
                   child: Text(
-                    'Card',
+                    'List',
                     style: GoogleFonts.pacifico(
                         textStyle: TextStyle(fontSize: 30)),
                   ),
