@@ -1,15 +1,17 @@
+import 'package:card/Clean%20Designs_Fruits.dart';
 import 'package:card/anmations.dart';
 import 'package:card/awayAndinvisble.dart';
 import 'package:card/cakes.dart';
+import 'package:card/card.dart';
 import 'package:card/carsarvice.dart';
 import 'package:card/clean_designs.dart';
 import 'package:card/currencyConvert.dart';
 import 'package:card/fashion_designs.dart';
 import 'package:card/food.dart';
+import 'package:card/fruit.dart';
 import 'package:card/fruits.dart';
 import 'package:card/furniture.dart';
 import 'package:card/hairstylist.dart';
-import 'package:card/listtest.dart';
 import 'package:card/minimalDesigns.dart';
 import 'package:card/plantdetails.dart';
 import 'package:card/plants.dart';
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/list': (context) => ListTest(),
+        '/list': (context) => Cardd(),
         '/anmations': (context) => Anmation(),
         '/profile': (context) => Profile(),
         '/image': (context) => ImageCou(),
@@ -84,6 +86,7 @@ class MyApp extends StatelessWidget {
         '/pla': (context) => PlantDetail(),
         '/scro': (context) => Scroll(),
         '/rental': (context) => RentalService(),
+        '/frut': (context) => Frut(),
       },
     );
   }
@@ -151,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.of(context).pushNamed('/list');
                   },
                   child: Text(
-                    'List',
+                    'card',
                     style: GoogleFonts.pacifico(
                         textStyle: TextStyle(fontSize: 30)),
                   ),
@@ -593,6 +596,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text(
                     'Rental Service',
+                    style: GoogleFonts.pacifico(
+                        textStyle: TextStyle(fontSize: 30)),
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.lightBlueAccent,
+                thickness: 5,
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.swap_horizontal_circle_outlined,
+                  size: 30,
+                  color: Colors.redAccent,
+                ),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed((context), '/frut');
+                  },
+                  child: Text(
+                    'Clean Designs - Fruits',
                     style: GoogleFonts.pacifico(
                         textStyle: TextStyle(fontSize: 30)),
                   ),
